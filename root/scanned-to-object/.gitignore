@@ -1,0 +1,8 @@
+out/
+compare_out/
+.venv/
+__pycache__/
+fake_scan.ply
+reference_limb.stl
+build/
+dist/
