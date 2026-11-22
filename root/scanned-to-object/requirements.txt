@@ -1,0 +1,9 @@
+open3d>=0.18
+numpy
+scipy
+trimesh
+mapbox-earcut
+matplotlib
+shapely
+pymeshfix
+networkx
