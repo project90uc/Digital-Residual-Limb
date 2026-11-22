@@ -101,8 +101,10 @@ class App(tk.Tk):
         self.progress = ttk.Progressbar(left, mode="determinate", maximum=6)
         self.progress.grid(row=8, column=0, sticky="ew", **pad)
 
+        # Colors are set explicitly so the text stays readable in macOS/Windows dark mode.
         self.log = tk.Text(left, height=12, width=52, state="disabled", wrap="word",
-                           font=("Courier", 9), background="#f6f6f6", relief="flat")
+                           font=("Courier", 11), background="#f6f6f6", foreground="#222222",
+                           relief="flat")
         self.log.grid(row=9, column=0, sticky="nsew", **pad)
         left.rowconfigure(9, weight=1)
 
@@ -115,8 +117,9 @@ class App(tk.Tk):
         self.folder_btn.pack(side="left", fill="x", expand=True, padx=(6, 0))
 
         # preview
-        self.summary = ttk.Label(right, text="Load a scan and press Convert.", font=("", 11))
-        self.summary.pack(anchor="w")
+        self.summary = tk.Label(right, text="Load a scan and press Convert.", font=("", 12),
+                                background="white", foreground="#222222", anchor="w", padx=8, pady=6)
+        self.summary.pack(fill="x")
         self.fig = Figure(figsize=(6, 6), dpi=100)
         self.ax = self.fig.add_subplot(111, projection="3d")
         self._blank_preview()
